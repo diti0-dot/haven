@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <div class="logo">
+            <img src="view-carousel-outline.svg" alt="">
+        </div>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <div class="dropdown">
+            <a href="#Rooms" class="dropbtn">Rooms</a>
+            <div class="dropdown-content">
+                <a href="single-room.html">Single Room</a>
+                <a href="double-room.html">Double Room</a>
+                <a href="suite.html">Suite</a>
+            </div>
+        </div>
+        <a href="#restaurant">Dining</a>
+        <div class="dropdown">
+            <a href="#meeting" class="dropbtn">Events</a>
+            <div class="dropdown-content">
+                <a href="wedding.html">Weddings</a>
+                <a href="conference.html">Conferences</a>
+                <a href="parties.html">Parties</a>
+            </div>
+        </div>
+        <a href="reviews.html">Reviews</a>
+        <a href="#footer">Contact</a>
+    </nav>
+</header>
+
+    <section class="hero">
+        <div class="hero-content">
+          <h1>Sunset Haven</h1>
+          <p>Your Perfect Getaway</p>
+          <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+        </div>
+      </section>
+
+      <section class="search-bar">
+        <h2>Find Your Perfect Stay</h2>
+        <form class="search-form">
+            <div class="form-group">
+                <label for="destination">Destination or Hotel</label>
+                <input type="text" id="destination" name="destination" placeholder="Where are you going?" required>
+            </div>
+            <div class="form-group">
+                <label for="check-in">Check-in</label>
+                <input type="date" id="check-in" name="check-in" required>
+            </div>
+            <div class="form-group">
+                <label for="check-out">Check-out</label>
+                <input type="date" id="check-out" name="check-out" required>
+            </div>
+            <button type="submit" class="btn">Search</button>
+        </form>
+    </section>
+    
+   <!-- The Modal (Booking Form) -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeBookingForm()">&times;</span>
+      <h2>Book Your Stay</h2>
+      <form id="bookingForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="guests">Guests:</label>
+        <input type="number" id="guests" name="guests" min="1" required>
+  
+        <!-- Dropdown for Room Type -->
+        <form id="bookingForm">
+            <label for="room-type">Room Type:</label>
+            <select id="room-type" name="room-type">
+              <option value="single">Single Room</option>
+              <option value="double">Double Room</option>
+              <option value="suite">Suite</option>
+              <option value="family">Family Room</option>
+              <option value="deluxe">Deluxe Room</option>
+              <option value="penthouse">Penthouse</option>
+            </select>
+          
+            <label for="check-in">Check-In Date:</label>
+            <input type="date" id="check-in" name="check-in" required min="" />
+          
+            <label for="check-out">Check-Out Date:</label>
+            <input type="date" id="check-out" name="check-out" required min="" />
+          
+            <button type="submit" class="btn">Submit</button>
+          </form>
+          
+          <div id="successMessage" class="success-message">
+            <p>Booking Successful!</p>
+          </div>        
+
+      </div>
+    </div>
+      
+      <section id="about">
+        <img src="pexels-andreaedavis-2873951.jpg" alt="">
+        <div class="info">
+        <h2>About Us</h2>
+        <p>Discover the luxury and comfort of Sunset Haven, located in the heart of paradise.</p>
+        <p>Our hotel offers a variety of rooms and suites to suit your needs, whether you are traveling for business or pleasure.</p>
+        <p>Enjoy our world-class amenities, including a rooftop pool, fitness center, and spa.</p>
+        <p>Book your stay today and experience the beauty of Sunset Haven.</p>
+      </div>
+      </section>
+
+      <section id="Rooms">
+        <h2>Rooms & Suites</h2>
+        <div class="rooms_container">
+            <!-- Single Room Card -->
+            <div class="room_card">
+                <div>
+                    <img src="singl.jpg" alt="Single Room">
+                </div>
+                <div class="description">
+                    <h3>Single Room</h3>
+                    <p>Our single rooms are perfect for solo travelers or couples looking for a cozy retreat.</p>
+                    <p>Each room features a comfortable bed, private bathroom, and stunning views of the ocean.</p>
+                    <p class="price">
+                        <img src="currency-usd.svg" alt="money"> $50 per night
+                    </p>
+                    <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+                </div>
+            </div>
+    
+            <!-- Double Room Card -->
+            <div class="room_card">
+                <div>
+                    <img src="double.jpg" alt="Double Room">
+                </div>
+                <div class="description">
+                    <h3>Double Room</h3>
+                    <p>Spacious and comfortable, our double rooms are ideal for small families or friends traveling together.</p>
+                    <p>Enjoy modern amenities, a private bathroom, and a scenic balcony to unwind.</p>
+                    <p class="price">
+                        <img src="currency-usd.svg" alt="money"> $80 per night
+                    </p>
+                    <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+                </div>
+            </div>
+    
+            <!-- Suite Card -->
+            <div class="room_card">
+                <div>
+                    <img src="suite.jpg" alt="Suite">
+                </div>
+                <div class="description">
+                    <h3>Suite</h3>
+                    <p>Experience luxury and elegance in our suites, featuring a separate living area and premium furnishings.</p>
+                    <p>Perfect for travelers who appreciate space, comfort, and exceptional service.</p>
+                    <p class="price">
+                        <img src="currency-usd.svg" alt="money"> $150 per night
+                    </p>
+                    <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+                </div>
+            </div>
+    
+            <!-- Family Room Card -->
+            <div class="room_card">
+                <div>
+                    <img src="fam.jpg" alt="Family Room">
+                </div>
+                <div class="description">
+                    <h3>Family Room</h3>
+                    <p>Designed for families, our family rooms offer multiple beds, a large bathroom, and kid-friendly amenities.</p>
+                    <p>Make your family vacation memorable with plenty of space to relax.</p>
+                    <p class="price">
+                        <img src="currency-usd.svg" alt="money"> $100 per night
+                    </p>
+                    <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+                </div>
+            </div>
+    
+            <!-- Deluxe Room Card -->
+            <div class="room_card">
+                <div>
+                    <img src="deluxe.jpg" alt="Deluxe Room">
+                </div>
+                <div class="description">
+                    <h3>Deluxe Room</h3>
+                    <p>Upgrade your stay with our deluxe rooms, offering enhanced comfort, modern decor, and additional features.</p>
+                    <p>Includes a large bed, luxurious bathroom, and complimentary breakfast.</p>
+                    <p class="price">
+                        <img src="currency-usd.svg" alt="money"> $120 per night
+                    </p>
+                    <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+                </div>
+            </div>
+    
+            <!-- Penthouse Card -->
+            <div class="room_card">
+                <div>
+                    <img src="pent.jpg" alt="Penthouse">
+                </div>
+                <div class="description">
+                    <h3>Penthouse</h3>
+                    <p>Indulge in ultimate luxury with our penthouse suite, featuring panoramic views and top-tier amenities.</p>
+                    <p>The perfect choice for a truly unforgettable and lavish experience.</p>
+                    <p class="price">
+                        <img src="currency-usd.svg" alt="money"> $300 per night
+                    </p>
+                    <a href="javascript:void(0);" class="btn" onclick="openBookingForm()">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Services & Amenities</h2>
+        <div class="services-table">
+            <div class="service-row">
+                <div class="service-name">Room Service</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+            <div class="service-row">
+                <div class="service-name">Pool</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+            <div class="service-row">
+                <div class="service-name">Fitness Center</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+            <div class="service-row">
+                <div class="service-name">Spa</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+            <div class="service-row">
+                <div class="service-name">Free WiFi</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+            <div class="service-row">
+                <div class="service-name">Meeting Facilities</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+            <div class="service-row">
+                <div class="service-name">On-Site Dining</div>
+                <div class="service-tick"><img src="tick-mark.svg" alt="Available"></div>
+            </div>
+        </div>
+    </section>
+    <section id ="meeting">
+        <h2>Meetings & Events</h2>
+        <div class="content-container">
+            <div class="text">
+                <p>Host your next event at Sunset Haven, where we offer a variety of meeting spaces and event packages to suit your needs.</p>
+                <p>Our professional staff will assist you with planning, catering, and audiovisual equipment to ensure a successful event.</p>
+                <a href="events.html" class="btn">Learn More</a>
+            </div>
+            <div class="image">
+                <img src="meeting.jpg" alt="Meeting">
+            </div>
+        </div>
+    </section>
+    
+    <section id="restaurant">
+        <h2>Dining & Bar</h2>
+        <div class="content-container">
+            <div class="image">
+                <img src="dining.jpg" alt="Dining">
+            </div>
+            <div class="text">
+                <p>Indulge in a culinary experience at our on-site restaurant, featuring a diverse menu of local and international dishes.</p>
+                <p>Our talented chefs use fresh, seasonal ingredients to create delicious meals for breakfast, lunch, and dinner.</p>
+                <p>Relax with a cocktail at our bar, offering a selection of wines, beers, and spirits.</p>
+                <a href="dining.html" class="btn">View Menu</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="special">
+        <h2>Special Deals</h2>
+        <div class="deals-container">
+            <div class="deal">
+                <img src="deal1.jpg" alt="Weekend Getaway">
+                <h3>Weekend Getaway</h3>
+                <p>Book your weekend stay and enjoy exclusive discounts on spa treatments and dining.</p>
+                <a href="deals.html" class="btn">View Deal</a>
+            </div>
+            <div class="deal">
+                <img src="deal2.jpg" alt="Family Package">
+                <h3>Family Package</h3>
+                <p>Plan the perfect family vacation with special rates and fun activities for everyone.</p>
+                <a href="deals.html" class="btn">View Deal</a>
+            </div>
+            <div class="deal">
+                <img src="deal3.jpg" alt="Romantic Escape">
+                <h3>Romantic Escape</h3>
+                <p>Surprise your loved one with a romantic package, including a candlelit dinner and a spa session.</p>
+                <a href="deals.html" class="btn">View Deal</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="footer">
+        <!-- Hot Destinations -->
+        <div class="footer-destinations">
+            <h3>Hot Destinations</h3>
+            <ul>
+                <li>Amsterdam</li>
+                <li>Bangkok</li>
+                <li>Bengaluru</li>
+                <li>Berlin</li>
+                <li>Budapest</li>
+                <li>Copenhagen</li>
+                <li>Dubai</li>
+                <li>Dublin</li>
+                <li>Gran Canaria</li>
+                <li>Istanbul</li>
+                <li>London</li>
+                <li>Manchester</li>
+                <li>Milan</li>
+                <li>New Delhi</li>
+                <li>Oslo</li>
+                <li>Paris</li>
+                <li>Riga</li>
+                <li>Shanghai</li>
+                <li>Stockholm</li>
+                <li>Sydney</li>
+                <li>Zurich</li>
+            </ul>
+        </div>
+    
+        <!-- Social Media -->
+        <div class="footer-social">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Pinterest</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">YouTube</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    
+        <!-- Attribution -->
+        <div class="footer-attribution">
+            <p>All images are from <a href="https://www.pexels.com" target="_blank">Pexels</a>.</p>
+        </div>
+    </footer>
+    
+
+  <script src="script.js">
+    
+  </script>
+    
+</body>
+</html>
